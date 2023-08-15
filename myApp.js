@@ -1,6 +1,6 @@
 let express = require('express');
 let app = express();
-
+let PORT =8080
 
 // 1 # Conoce la Console
 console.log('Hello World')
@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 })
 
 
-app.listen(process.env.PORT ?? 8080, () => console.log('TODO BIEN:'+process.env.PORT))
+app.listen(PORT, () => console.log('TODO BIEN:'+PORT))
 
 
 
