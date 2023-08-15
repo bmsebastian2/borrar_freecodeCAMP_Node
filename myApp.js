@@ -1,6 +1,6 @@
 let express = require('express');
 let app = express();
-let path = require('node:path')
+let path = require('path')
 let PORT =8080
 let pathFile = path.join(__dirname + '/views/index.html')
 
