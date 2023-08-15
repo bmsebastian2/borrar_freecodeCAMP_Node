@@ -9,8 +9,11 @@ console.log(pathFile)
 console.log('Hello World')
 
 
-// 2 # servidor expreso de trabajo
+// 2 # Servidor expreso de trabajo
 // 3 # Servir un archivo HTML
+// 4 # Servir activos estáticos
+app.use(express.static('public'))
+
 app.get('/', (req, res) => {
   res.sendFile(pathFile)
 })
