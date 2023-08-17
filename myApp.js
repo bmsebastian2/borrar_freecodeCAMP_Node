@@ -56,8 +56,10 @@ app
     const { first, last } = req.query;
     res.send({ name: `${first} ${last}` });
   })
+  // 12 # Obtener datos de solicitudes POST
+
   .post((req, res) => {
-    const { first, last } = req.query;
+    const { first, last } = req.body;
     res.send({ name: `${first} ${last}` });
   });
 
