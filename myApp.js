@@ -34,7 +34,9 @@ app.get(
     req.time = new Date().toDateString();
     next();
   },
-  (req, res) => {
+  function (req, res) {
+    console.log(req.time);
+
     res.send({ time: req.time });
   }
 );
