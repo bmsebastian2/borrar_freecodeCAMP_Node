@@ -1,6 +1,7 @@
 let express = require("express");
 let app = express();
 let path = require("path");
+let bodyParser = require("body-parser");
 let PORT = 8080;
 let pathFile = path.join(__dirname + "/views/index.html");
 let pathStatic = path.join(__dirname + "/public");
@@ -10,6 +11,7 @@ app.use((req, res, next) => {
   console.log(`${method} ${path} - ${ip}`);
   next();
 });
+app.use(bodyParser.urlencoded({ extended: false }));
 // 1 # Conoce la Console
 console.log("Hello World");
 
@@ -57,8 +59,3 @@ app
   .post((req, res) => {
     const { first, last } = req.query;
     res.send({ name: `${first} ${last}` });
-  });
-
-app.listen(PORT, () => console.log("TODO BIEN:" + PORT));
-
-module.exports = app;
