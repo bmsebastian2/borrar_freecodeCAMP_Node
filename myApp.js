@@ -31,13 +31,10 @@ app.get("/json", (req, res) => {
 app.get(
   "/now",
   (req, res, next) => {
-    const now = new Date();
-    req.time = now.getDay();
+    req.time = new Date().toDateString();
     next();
   },
-  function (req, res) {
-    console.log(req.time);
-
+  (req, res) => {
     res.send({ time: req.time });
   }
 );
