@@ -52,13 +52,11 @@ app
   .route("/name")
   .get((req, res) => {
     const { first, last } = req.query;
-
-    res.send({ first, last });
+    res.send({ name: `${first} ${last}` });
   })
   .post((req, res) => {
     const { first, last } = req.query;
-
-    res.send({ first, last });
+    res.send({ name: `${first} ${last}` });
   });
 
 app.listen(PORT, () => console.log("TODO BIEN:" + PORT));
