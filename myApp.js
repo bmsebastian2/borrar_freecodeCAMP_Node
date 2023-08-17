@@ -39,11 +39,27 @@ app.get(
   }
 );
 
-// * # Obtenga Parametros de ruta
+// 9 # Obtenga Parametros de ruta
 app.get("/:word/echo", (req, res) => {
   let word = req.params.word;
   res.send({ echo: word });
 });
+
+// 10 # Parámetros de Query
+let firstSet;
+let lastSet;
+app
+  .route("/name")
+  .get((req, res) => {
+    const { first, last } = req.query;
+
+    res.send({ first, last });
+  })
+  .post((req, res) => {
+    const { first, last } = req.query;
+
+    res.send({ first, last });
+  });
 
 app.listen(PORT, () => console.log("TODO BIEN:" + PORT));
 
