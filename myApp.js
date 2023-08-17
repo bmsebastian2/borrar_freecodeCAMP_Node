@@ -59,3 +59,10 @@ app
   .post((req, res) => {
     const { first, last } = req.query;
     res.send({ name: `${first} ${last}` });
+  });
+
+// 11 # analizar solicitudes POST
+
+app.listen(PORT, () => console.log("TODO BIEN:" + PORT));
+
+module.exports = app;
