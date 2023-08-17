@@ -48,8 +48,6 @@ app.get("/:word/echo", (req, res) => {
 });
 
 // 10 # Parámetros de Query
-let firstSet;
-let lastSet;
 app
   .route("/name")
   .get((req, res) => {
@@ -57,7 +55,6 @@ app
     res.send({ name: `${first} ${last}` });
   })
   // 12 # Obtener datos de solicitudes POST
-
   .post((req, res) => {
     const { first, last } = req.body;
     res.send({ name: `${first} ${last}` });
