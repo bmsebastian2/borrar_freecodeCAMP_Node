@@ -31,7 +31,8 @@ app.get("/json", (req, res) => {
 app.get(
   "/now",
   (req, res, next) => {
-    req.time = new Date().toDateString();
+    const now = new Date();
+    req.time = now.getDay();
     next();
   },
   function (req, res) {
