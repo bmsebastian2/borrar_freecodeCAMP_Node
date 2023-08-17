@@ -27,6 +27,18 @@ app.get("/json", (req, res) => {
   res.send({ message: "Hello json" });
 });
 
+// 8 # Midlleware servidor de tiempo
+app.get(
+  "/now",
+  (req, res, next) => {
+    req.time = new Date().toDateString();
+    next();
+  },
+  (req, res) => {
+    res.send({ time: req.time });
+  }
+);
+
 app.listen(PORT, () => console.log("TODO BIEN:" + PORT));
 
 module.exports = app;
