@@ -39,6 +39,12 @@ app.get(
   }
 );
 
+// * # Obtenga Parametros de ruta
+app.get("/:word/echo", (req, res) => {
+  let word = req.params.word;
+  res.send({ echo: word });
+});
+
 app.listen(PORT, () => console.log("TODO BIEN:" + PORT));
 
 module.exports = app;
